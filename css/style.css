@@ -1,0 +1,296 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+}
+
+html{
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #ddd;
+  font-size: 18px;
+  font-family: "Rajdhani", Arial, Helvetica, sans-serif;
+  margin: 50px;
+  margin-top: 20px;
+  overflow-x: hidden;
+}
+
+/* Container */
+.container {
+  display: grid;
+  gap: 15px;
+}
+
+/* Header */
+.header {
+  display: grid;
+  grid-template-areas:
+    "hero hero feature-1"
+    "hero hero feature-2";
+}
+
+.hero {
+  grid-area: hero;
+  min-height: 400px;
+  background-image: url(../img/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 50px;
+}
+
+.hero h2 {
+  display: none;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 50%);
+  color: white;
+}
+
+.hero p {
+  display: none;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 50%);
+  color: white;
+}
+
+.features {
+  color: white;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.feature-1 {
+  min-height: 300px;
+  grid-area: feature-1;
+  background-image: url(../img/hero1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.feature-2 {
+  min-height: 300px;
+  grid-area: feature-2;
+  background-image: url(../img/hero2.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.features .price {
+  font-size: 2em;
+  font-weight: 500;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 50%);
+}
+
+/* Navigasi */
+.menu {
+  order: -1;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+}
+
+.menu .brand {
+  font-size: 1.3em;
+  color: rgb(68, 64, 64);
+}
+
+.menu ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  gap: 5px;
+  text-transform: uppercase;
+  font-weight: 1000;
+}
+
+.menu a {
+  display: block;
+  background-color: rgb(16, 15, 15);
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: 5px;
+}
+
+/* Hamburger Toggle */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 19px;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: black;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+.menu-toggle input {
+  position: absolute;
+  left: -5px;
+  top: -2px;
+  width: 140%;
+  height: 140%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+
+/* Hamburger Toggle Animation */
+.menu-toggle span:nth-child(2) {
+  transform-origin: left top;
+}
+
+.menu-toggle span:nth-child(4) {
+  transform-origin: right bottom;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+  transform: rotate(90deg) translate(-4px, -6px);
+  background-color: white;
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+  transform: rotate(90deg);
+  background-color: white;
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+  transform: rotate(90deg) translate(5px, 6px);
+  background-color: white;
+}
+
+/* Service */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  text-align: center;
+}
+
+.service {
+  background-color: white;
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid grey;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 50%);
+  text-decoration: none;
+  list-style: none;
+  color: black;
+}
+
+.service .icon {
+  font-size: 2em;
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-top: 30px;
+  align-items: center;
+  justify-items: center;
+  gap: 5px;
+}
+
+.gallery img {
+  width: 300px;
+  height: 300px;
+  border: 1px solid grey;
+}
+
+.gallery h2 {
+  grid-column-start: 1;
+  grid-column-end: -1;
+  margin-bottom: 15px;
+  font-size: 1.5em;
+}
+
+/* footer */
+.footer {
+  background-color: rgb(35, 32, 32);
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.footer a {
+  color: rgb(167, 42, 142);
+  text-decoration: none;
+  text-align: center;
+}
+
+.active {
+  opacity: 0.5;
+}
+
+/* Responsive Breakpoints */
+@media screen and (max-width: 1024px) {
+  .menu {
+    order: inherit;
+    grid-template-columns: 1fr;
+  }
+
+  .menu .brand {
+    display: none;
+  }
+
+  .hero h2 {
+    display: inherit;
+  }
+  .hero p {
+    display: inherit;
+  }
+}
+@media screen and (max-width: 768px) {
+  .menu ul {
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    justify-content: space-evenly;
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    background-color: rgb(11, 8, 10);
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    transition: all 0.7s;
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  .menu ul.slide {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .menu-toggle {
+    display: flex;
+  }
+
+  .menu {
+    order: -1;
+    justify-items: end;
+  }
+  @media screen and (max-width: 506px) {
+    body {
+      margin: 15px;
+    }
+    .header {
+      grid-template-areas:
+        "hero"
+        "feature-1"
+        "feature-2";
+    }
+  }
+}

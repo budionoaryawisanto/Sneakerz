@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/product.css" />
+    <link rel="stylesheet" href="css/css/bootstrap.css" />
+  </head>
+  <body>
+    <div class="container mt-3">
+      <nav class="menu">
+        <div class="brand">
+          <h1>SneakerZ</h1>
+        </div>
+        <ul class="menu-list">
+          <li><a href="index.html" class="page-scroll tombolNav">Home</a></li>
+          <li><a href="product.html" class="page-scroll tombolNav active">Product</a></li>
+          <li><a href="" class="page-scroll tombolNav">About</a></li>
+          <li><a href="index.html" class="page-scroll tombolNav">Gallery</a></li>
+        </ul>
+        <div class="menu-toggle">
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+      <div class="search-engine ps-3 pe-0 py-2 mt-3 badge position-relative start-50 translate-middle">
+        <input type="text" autocomplete="off" spellcheck="false" role="combobox" class="keyword d-inline border-0" placeholder="Search here..." />
+        <div class="btnSearch d-inline">🔍</div>
+        <div class="search-info text-dark mt-4 mx-auto d-none">yaah, The shoes you're looking for are not available 😭...</div>
+        </div>
+      </div>
+      <div role="listbox" class="dropdown mx-auto d-none">
+        <div class="hot ctgryBtn rounded-pill">
+          <div class="icon d-inline">🔥</div>
+          <h6 class="d-inline">Hot</h6>
+        </div>
+      
+        <div class="top-sell ctgryBtn rounded-pill mt-2">
+          <div class="icon d-inline">🚀</div>
+          <h6 class="d-inline">Top Sell</h6>
+        </div>
+      
+        <div class="newest ctgryBtn rounded-pill mt-2">
+          <div class="icon d-inline">📌</div>
+          <h6 class="d-inline">Newest</h6>
+        </div>
+      
+        <div class="discount ctgryBtn rounded-pill mt-2">
+          <div class="icon d-inline">💰</div>
+          <h6 class="d-inline">Discount</h6>
+        </div>
+    </div>
+    <div class="row data justify-content-center"></div>
+    </div>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

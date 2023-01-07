@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/product.css" />
+    <link rel="stylesheet" href="../css/css/bootstrap.css" />
+  </head>
+  <body>
+    <div class="container mt-3">
+      <nav class="menu">
+        <div class="brand">
+          <h1>SneakerZ</h1>
+        </div>
+        <ul class="menu-list">
+          <li><a href="index.ejs" class="page-scroll tombolNav">Home</a></li>
+          <li><a href="product.ejs" class="page-scroll tombolNav active">Product</a></li>
+          <li><a href="" class="page-scroll tombolNav">About</a></li>
+          <li><a href="index.ejs" class="page-scroll tombolNav">Gallery</a></li>
+        </ul>
+        <div class="menu-toggle">
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+
+      <div class="search-engine text-center">
+        <input type="text" class="keyword d-inline" placeholder="Search here..." />
+        <div class="btnSearch d-inline">🔍</div>
+        <div class="search-info text-dark mt-2"></div>
+      </div>
+
+      <div class="data_section">
+        <ul class="db-shoes">
+          <% for (let shoe of shoes) { %>
+          <li><%= shoe.name %> - <%= shoe.codeart %></li>
+          <% } %>
+        </ul>
+      </div>
+
+      <div class="data"></div>
+
+      </div>
+    </div>
+
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/script.js"></script>
+  </body>
+</html>
